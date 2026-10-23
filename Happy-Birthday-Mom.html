@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Ulang Tahun Ibu ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',system-ui,-apple-system,sans-serif;
+    background:linear-gradient(170deg,#fff1f5 0%,#ffe6ee 35%,#fff7ef 100%);
+    color:#6b4351;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+  .script{font-family:'Great Vibes',cursive;font-weight:400;}
+
+  /* ============ INTRO ============ */
+  .intro{
+    position:fixed;inset:0;z-index:1000;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 40%,#fff8fa,#ffe3ec 45%,#fbdcc9);
+    transition:opacity .9s ease,transform .9s ease;
+    text-align:center;padding:20px;
+  }
+  .intro.hide{opacity:0;transform:scale(1.12);pointer-events:none;}
+  .intro .emoji{font-size:4rem;animation:bounce 2s ease-in-out infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .intro h1{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:600;margin:18px 0 8px;color:#b3567a;}
+  .intro p{font-size:.95rem;color:#a97b8c;margin-bottom:28px;font-weight:300;}
+  .btn{
+    border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:1rem;
+    padding:15px 38px;border-radius:50px;color:#fff;
+    background:linear-gradient(135deg,#ff8fab,#e36a9a);
+    box-shadow:0 12px 28px rgba(227,106,154,.4);
+    transition:transform .25s,box-shadow .25s;
+    letter-spacing:.3px;
+  }
+  .btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 34px rgba(227,106,154,.5);}
+  .btn:active{transform:translateY(0) scale(.98);}
+
+  /* ============ HERO ============ */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    padding:40px 20px;position:relative;
+  }
+  .hero .pre{
+    letter-spacing:5px;font-size:.7rem;text-transform:uppercase;
+    color:#c98ba6;margin-bottom:18px;font-weight:400;
+  }
+  .hero .big{
+    font-size:clamp(3rem,13vw,6.5rem);line-height:1;
+    color:#d95f8a;
+    text-shadow:0 6px 30px rgba(217,95,138,.25);
+  }
+  .hero .ibu{
+    font-size:clamp(2.2rem,9vw,4rem);font-weight:600;
+    color:#b3567a;margin-top:6px;letter-spacing:8px;
+  }
+  .hero .sub{
+    max-width:520px;margin-top:26px;font-weight:300;
+    color:#96707f;line-height:1.9;font-size:.98rem;
+  }
+  .scroll-hint{
+    position:absolute;bottom:32px;font-size:1.4rem;color:#d992ac;
+    animation:down 2s ease-in-out infinite;
+  }
+  @keyframes down{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(10px);opacity:1}}
+
+  /* ============ SECTION ============ */
+  section{padding:70px 20px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  .section-title{
+    text-align:center;font-size:clamp(1.5rem,4.5vw,2.1rem);
+    color:#b3567a;font-weight:600;margin-bottom:12px;
+  }
+  .section-sub{text-align:center;font-weight:300;color:#a97b8c;margin-bottom:45px;font-size:.9rem;}
+
+  /* ============ CAKE ============ */
+  .cake-section{text-align:center;}
+  .cake-stage{
+    display:flex;justify-content:center;align-items:flex-end;
+    height:330px;margin-bottom:10px;
+  }
+  .cake{
+    position:relative;width:280px;height:250px;cursor:pointer;
+    transition:transform .3s;
+  }
+  .cake:hover{transform:translateY(-5px) scale(1.02);}
+  .cake .plate{
+    position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+    width:300px;height:16px;border-radius:50%;
+    background:linear-gradient(#f6e3ea,#e0c6d1);
+    box-shadow:0 8px 20px rgba(180,120,150,.2);
+  }
+  .layer{
+    position:absolute;left:50%;transform:translateX(-50%);
+    border-radius:10px;box-shadow:inset 0 -10px 20px rgba(0,0,0,.06);
+  }
+  .layer::before{
+    content:'';position:absolute;top:-9px;left:0;right:0;height:20px;
+    background:radial-gradient(circle at 10px 10px,#fff 9px,transparent 9.5px) repeat-x;
+    background-size:20px 20px;
+  }
+  .layer.bottom{bottom:12px;width:250px;height:78px;
+    background:linear-gradient(#ffb3c9,#f18aac);}
+  .layer.mid{bottom:88px;width:200px;height:62px;
+    background:linear-gradient(#ffc9d9,#f7a3bd);}
+  .layer.top{bottom:148px;width:152px;height:52px;
+    background:linear-gradient(#ffdae4,#ffbdd0);}
+
+  .candles{
+    position:absolute;bottom:196px;left:50%;transform:translateX(-50%);
+    display:flex;gap:26px;z-index:3;
+  }
+  .candle{position:relative;width:11px;height:44px;border-radius:4px;
+    background:repeating-linear-gradient(45deg,#fff,#fff 4px,#ff9ebc 4px,#ff9ebc 8px);
+    box-shadow:0 2px 4px rgba(0,0,0,.1);}
+  .flame{
+    position:absolute;top:-24px;left:50%;transform:translateX(-50%);
+    width:14px;height:22px;
+    background:radial-gradient(circle at 50% 72%,#fff 0%,#ffe066 28%,#ff9f1c 62%,rgba(255,159,28,0) 78%);
+    border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+    box-shadow:0 0 22px 7px rgba(255,180,60,.55);
+    animation:flicker .28s infinite alternate;
+    transition:opacity .4s,transform .4s;
+  }
+  @keyframes flicker{
+    from{transform:translateX(-50%) scale(1) rotate(-3deg);}
+    to{transform:translateX(-50%) scale(1.12) rotate(3deg);}
+  }
+  .cake.blown .flame{opacity:0;transform:translateX(-50%) scale(0);}
+  .cake.blown .smoke{opacity:1;animation:smokeUp 2.4s ease-out forwards;}
+  .smoke{
+    position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+    width:10px;height:10px;border-radius:50%;background:rgba(180,180,190,.65);
+    opacity:0;filter:blur(2px);
+  }
+  @keyframes smokeUp{
+    0%{opacity:.8;transform:translate(-50%,0) scale(.6);}
+    100%{opacity:0;transform:translate(-50%,-70px) scale(3);}
+  }
+  .cake-hint{
+    display:inline-block;margin-top:8px;font-size:.85rem;color:#c98ba6;
+    background:#fff;padding:10px 22px;border-radius:50px;
+    box-shadow:0 6px 18px rgba(200,140,170,.15);
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.75}50%{opacity:1}}
+  .wish{
+    max-width:600px;margin:26px auto 0;font-size:1rem;line-height:1.9;
+    color:#b3567a;font-weight:400;
+    opacity:0;transform:translateY(15px);transition:.8s;
+  }
+  .wish.show{opacity:1;transform:none;}
+
+  /* ============ LETTER ============ */
+  .letter{
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:26px;
+    padding:clamp(28px,6vw,55px);
+    box-shadow:0 24px 60px rgba(200,140,170,.16);
+    line-height:2.05;font-weight:300;color:#7a5566;
+    font-size:clamp(.92rem,2.4vw,1.02rem);
+  }
+  .letter p{margin-bottom:18px;}
+  .letter .greet{
+    font-family:'Great Vibes',cursive;font-size:2.1rem;color:#d95f8a;
+    margin-bottom:22px;line-height:1.4;
+  }
+  .letter .sign{
+    margin-top:30px;text-align:right;font-family:'Great Vibes',cursive;
+    font-size:1.8rem;color:#d95f8a;
+  }
+
+  /* ============ GALLERY ============ */
+  .gallery{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+  }
+  .photo{
+    position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;
+    background:linear-gradient(135deg,#ffd9e3,#ffeacb);
+    display:grid;place-items:center;
+    box-shadow:0 14px 34px rgba(200,140,170,.18);
+    transition:transform .4s ease;
+  }
+  .photo:hover{transform:translateY(-6px) rotate(-1deg);}
+  .photo::after{content:'📷';font-size:2rem;opacity:.45;position:absolute;}
+  .photo img{
+    width:100%;height:100%;object-fit:cover;position:relative;z-index:1;
+    display:block;
+  }
+
+  /* ============ CARDS ============ */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
+  .card{
+    background:rgba(255,255,255,.8);
+    border-radius:22px;padding:30px 26px;text-align:center;
+    box-shadow:0 16px 40px rgba(200,140,170,.14);
+    transition:transform .4s ease;
+  }
+  .card:hover{transform:translateY(-8px);}
+  .card .ic{font-size:2rem;margin-bottom:14px;display:block;}
+  .card h3{font-size:1rem;color:#b3567a;margin-bottom:10px;font-weight:600;}
+  .card p{font-size:.86rem;font-weight:300;line-height:1.85;color:#8d6577;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    text-align:center;padding:60px 20px 90px;
+    font-size:.8rem;color:#b992a3;font-weight:300;line-height:2;
+  }
+  footer .heart{color:#e36a9a;}
+
+  /* ============ FLOATING ELEMENTS ============ */
+  .floater{
+    position:fixed;bottom:-50px;z-index:5;pointer-events:none;
+    animation:floatUp linear forwards;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);opacity:0;}
+    12%{opacity:.95;}
+    100%{transform:translateY(-115vh) rotate(28deg);opacity:0;}
+  }
+  .confetti{
+    position:fixed;top:-24px;z-index:999;border-radius:2px;
+    pointer-events:none;animation:fall linear forwards;
+  }
+  @keyframes fall{
+    to{transform:translateY(108vh) rotate(760deg);opacity:.85;}
+  }
+
+  /* ============ MUSIC BUTTON ============ */
+  .music-btn{
+    position:fixed;right:18px;bottom:18px;z-index:900;
+    width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#ff8fab,#e36a9a);color:#fff;
+    font-size:1.3rem;display:grid;place-items:center;
+    box-shadow:0 10px 26px rgba(227,106,154,.45);
+    transition:transform .25s;
+  }
+  .music-btn:hover{transform:scale(1.1);}
+  .music-btn.playing{animation:spin 6s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(45px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);}
+  .reveal.show{opacity:1;transform:none;}
+
+  @media(max-width:480px){
+    .cake{transform:scale(.82);}
+    .cake:hover{transform:scale(.84);}
+    .cake-stage{height:290px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= INTRO ================= -->
+<div class="intro" id="intro">
+  <div>
+    <div class="emoji">🎂</div>
+    <h1>Untuk Ibu Tercinta</h1>
+    <p>Ada sesuatu yang ingin kami sampaikan...</p>
+    <button class="btn" id="startBtn">Buka Kejutan ✨</button>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <p class="pre">Happy Birthday</p>
+  <h1 class="script big">Selamat Ulang Tahun</h1>
+  <h2 class="ibu">IBU</h2>
+  <p class="sub">
+    Terima kasih sudah menjadi rumah, pelukan, dan doa
+    yang tidak pernah lelah untuk kami.
+  </p>
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- ================= KUE ================= -->
+<section class="cake-section">
+  <div class="wrap reveal">
+    <h2 class="section-title">Tiup Lilinnya, Bu 🕯️</h2>
+    <p class="section-sub">Klik kue di bawah ini untuk meniup lilin</p>
+
+    <div class="cake-stage">
+      <div class="cake" id="cake">
+        <div class="plate"></div>
+        <div class="layer bottom"></div>
+        <div class="layer mid"></div>
+        <div class="layer top"></div>
+        <div class="candles">
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-hint" id="cakeHint">👆 Klik kuenya</div>
+
+    <p class="wish" id="wish">
+      🎉 Yeay! Semoga semua doa dan harapan Ibu terkabul.<br>
+      Terima kasih sudah menjadi Ibu terbaik di dunia.
+    </p>
+  </div>
+</section>
+
+<!-- ================= SURAT ================= -->
+<section>
+  <div class="wrap reveal">
+    <div class="letter">
+      <div class="greet">Untuk Ibu,</div>
+      <p>
+        Terima kasih untuk setiap doa yang Ibu panjatkan di sepertiga malam,
+        untuk setiap pelukan yang tidak pernah Ibu hitung, dan untuk cinta
+        yang Ibu berikan tanpa pernah meminta balas.
+      </p>
+      <p>
+        Maaf jika selama ini belum bisa menjadi anak yang sempurna.
+        Terima kasih sudah selalu sabar menghadapi kami, meski lelah
+        tak pernah Ibu ceritakan.
+      </p>
+      <p>
+        Di hari istimewa ini, kami hanya ingin Ibu tahu —
+        bahwa semua yang Ibu tanamkan akan terus tumbuh,
+        dan setiap kebaikan Ibu tidak akan pernah sia-sia.
+      </p>
+      <p>
+        Sehat selalu ya, Bu. Panjang umur, bahagia, dan dikelilingi
+        oleh orang-orang yang menyayangi Ibu.
+        <span style="color:#d95f8a">❤️</span>
+      </p>
+      <div class="sign">Dengan cinta, anakmu</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERI ================= -->
+<section>
+  <div class="wrap reveal">
+    <h2 class="section-title">Kenangan Bersama Ibu</h2>
+    <p class="section-sub">Ganti foto di bawah dengan foto-foto Ibu 💐</p>
+
+    <!-- GANTI src="foto1.jpg" dengan file fotomu (taruh di folder yang sama) -->
+    <div class="gallery">
+      <figure class="photo">
+        <img src="foto1.jpg" alt="Kenangan 1" onerror="this.style.display='none'">
+      </figure>
+      <figure class="photo">
+        <img src="foto2.jpg" alt="Kenangan 2" onerror="this.style.display='none'">
+      </figure>
+      <figure class="photo">
+        <img src="foto3.jpg" alt="Kenangan 3" onerror="this.style.display='none'">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UCAPAN ================= -->
+<section>
+  <div class="wrap reveal">
+    <h2 class="section-title">Doa & Harapan</h2>
+    <p class="section-sub">Untuk Ibu tercinta</p>
+    <div class="cards">
+      <div class="card">
+        <span class="ic">🌷</span>
+        <h3>Sehat Selalu</h3>
+        <p>Semoga Ibu selalu diberi kesehatan, kekuatan, dan umur yang berkah.</p>
+      </div>
+      <div class="card">
+        <span class="ic">🤍</span>
+        <h3>Bahagia</h3>
+        <p>Semoga setiap hari Ibu dipenuhi senyum, tawa, dan hal-hal baik.</p>
+      </div>
+      <div class="card">
+        <span class="ic">✨</span>
+        <h3>Dikabulkan Doanya</h3>
+        <p>Semua yang Ibu impikan dan panjatkan, semoga segera terwujud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  Dibuat dengan <span class="heart">❤️</span> untuk Ibu<br>
+  Selamat Ulang Tahun, Ibu. Kami sayang Ibu, selalu.
+</footer>
+
+<button class="music-btn" id="musicBtn" title="Musik">🎵</button>
+
+<script>
+/* =========================================================
+   1. TOMBOL MULAI
+   ========================================================= */
+const intro    = document.getElementById('intro');
+const startBtn = document.getElementById('startBtn');
+const musicBtn = document.getElementById('musicBtn');
+
+startBtn.addEventListener('click', () => {
+  intro.classList.add('hide');
+  setTimeout(() => intro.style.display = 'none', 950);
+
+  // Mulai musik + hiasan
+  toggleMusic(true);
+  musicBtn.classList.add('playing');
+  spawnFloaters(14);
+  setInterval(() => spawnFloaters(3), 3500);
+});
+
+/* =========================================================
+   2. HIASAN MENGAMBANG (hati, bunga, balon)
+   ========================================================= */
+const EMOJIS = ['💖','💕','🌸','✨','💝','🎈','🌷','🤍'];
+function spawnFloaters(n){
+  for (let i = 0; i < n; i++){
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'floater';
+      el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+      el.style.left = Math.random() * 96 + 'vw';
+      el.style.fontSize = (13 + Math.random() * 22) + 'px';
+      el.style.animationDuration = (7 + Math.random() * 7) + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 15000);
+    }, i * 350);
+  }
+}
+
+/* =========================================================
+   3. KUE & LILIN
+   ========================================================= */
+const cake     = document.getElementById('cake');
+const cakeHint = document.getElementById('cakeHint');
+const wish     = document.getElementById('wish');
+let blown = false;
+
+cake.addEventListener('click', blowCandles);
+cakeHint.addEventListener('click', blowCandles);
+
+function blowCandles(){
+  if (blown) return;
+  blown = true;
+  cake.classList.add('blown');
+  cakeHint.textContent = 'Lilin sudah ditiup 🎉';
+  wish.classList.add('show');
+  confettiBurst(90);
+  setTimeout(() => confettiBurst(60), 700);
+}
+
+/* =========================================================
+   4. CONFETTI
+   ========================================================= */
+const COLORS = ['#ff8fab','#ffd166','#e36a9a','#a2d2ff','#ffc8dd','#bde0fe','#c9a227'];
+function confettiBurst(count){
+  for (let i = 0; i < count; i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+    c.style.width = (6 + Math.random() * 8) + 'px';
+    c.style.height = (9 + Math.random() * 11) + 'px';
+    c.style.animationDelay = (Math.random() * 0.6) + 's';
+    c.style.animationDuration = (2.2 + Math.random() * 2.2) + 's';
+    c.style.borderRadius = Math.random() > .6 ? '50%' : '2px';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5200);
+  }
+}
+
+/* =========================================================
+   5. MUSIK "HAPPY BIRTHDAY" (Web Audio API — tanpa file)
+   ========================================================= */
+let audioCtx = null;
+let musicOn  = false;
+let loopTimer = null;
+
+// [frekuensi, durasi]
+const MELODY = [
+  [392.00,.35],[392.00,.35],[440.00,.7],[392.00,.7],[523.25,.7],[493.88,1.2],
+  [392.00,.35],[392.00,.35],[440.00,.7],[392.00,.7],[587.33,.7],[523.25,1.2],
+  [392.00,.35],[392.00,.35],[783.99,.7],[659.25,.7],[523.25,.7],[493.88,.7],[440.00,1.2],
+  [698.46,.35],[698.46,.35],[659.25,.7],[523.25,.7],[587.33,.7],[523.25,1.4]
+];
+
+function toggleMusic(forceOn){
+  if (forceOn === true && musicOn) return;
+
+  if (musicOn){
+    musicOn = false;
+    clearTimeout(loopTimer);
+    musicBtn.classList.remove('playing');
+    musicBtn.textContent = '🔇';
+    return;
+  }
+
+  if (!audioCtx){
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  musicOn = true;
+  musicBtn.classList.add('playing');
+  musicBtn.textContent = '🎵';
+  playMelody();
+}
+
+function playMelody(){
+  if (!musicOn || !audioCtx) return;
+
+  let t = audioCtx.currentTime + 0.15;
+  const TEMPO = 0.52;
+
+  MELODY.forEach(([freq, dur]) => {
+    const osc  = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.linearRampToValueAtTime(0.12, t + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur * TEMPO);
+
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + dur * TEMPO + 0.06);
+
+    t += dur * TEMPO;
+  });
+
+  const total = MELODY.reduce((s, [, d]) => s + d, 0) * TEMPO;
+  loopTimer = setTimeout(playMelody, (total + 1.4) * 1000);
+}
+
+musicBtn.addEventListener('click', () => toggleMusic(false));
+
+/* =========================================================
+   6. ANIMASI MUNCUL SAAT SCROLL
+   ========================================================= */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting){
+      e.target.classList.add('show');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
